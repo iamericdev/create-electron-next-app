@@ -10,7 +10,7 @@
   "description": "Create Next.js-powered React apps with one command",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iamericdev/create-electron-next-app",
+    "url": "https://github.com/iamericdev/create-electron-next-app.git",
     "directory": "packages/create-electron-next-app"
   },
   "author": "Eric <ericricky200@gmail.com>",
