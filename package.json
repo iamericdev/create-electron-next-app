@@ -27,7 +27,9 @@
     "prebuild": "node ./scripts/rm.mjs dist",
     "build": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
     "prepublishOnly": "cd ../../ && turbo run build",
-    "lint-fix": "pnpm prettier -w --plugin prettier-plugin-tailwindcss 'templates/*-tw/{ts,js}/{app,pages}/**/*.{js,ts,tsx}'"
+    "lint-fix": "pnpm prettier -w --plugin prettier-plugin-tailwindcss 'templates/*-tw/{ts,js}/{app,pages}/**/*.{js,ts,tsx}'",
+    "link": "pnpm link --global",
+    "unlink": "pnpm rm --global create-electron-next-ap"
   },
   "devDependencies": {
     "@types/async-retry": "1.4.2",
