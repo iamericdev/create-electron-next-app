@@ -1,0 +1,59 @@
+{
+  "name": "create-electron-next-app",
+  "version": "1.0.0",
+  "keywords": [
+    "react",
+    "next",
+    "next.js",
+    "electron"
+  ],
+  "description": "Create Next.js-powered React apps with one command",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamericdev/create-electron-next-app",
+    "directory": "packages/create-electron-next-app"
+  },
+  "author": "Eric <ericricky200@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "create-electron-next-app": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "ncc build ./index.ts -w -o dist/",
+    "run:local": "node ./dist/index.js",
+    "prebuild": "node ./scripts/rm.mjs dist",
+    "build": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
+    "prepublishOnly": "cd ../../ && turbo run build",
+    "lint-fix": "pnpm prettier -w --plugin prettier-plugin-tailwindcss 'templates/*-tw/{ts,js}/{app,pages}/**/*.{js,ts,tsx}'"
+  },
+  "devDependencies": {
+    "@types/async-retry": "1.4.2",
+    "@types/cross-spawn": "6.0.0",
+    "@types/node": "20.14.2",
+    "@types/prompts": "2.4.2",
+    "@types/validate-npm-package-name": "4.0.2",
+    "@vercel/ncc": "0.38.1",
+    "async-retry": "1.3.1",
+    "ci-info": "4.0.0",
+    "commander": "12.1.0",
+    "conf": "13.0.1",
+    "cross-spawn": "7.0.3",
+    "fast-glob": "3.3.1",
+    "picocolors": "1.0.0",
+    "prettier-plugin-tailwindcss": "0.6.2",
+    "prompts": "2.4.2",
+    "tar": "7.5.7",
+    "typescript": "^5.9.3",
+    "update-check": "1.5.4",
+    "validate-npm-package-name": "5.0.1"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "async-sema": "^3.1.1"
+  }
+}
